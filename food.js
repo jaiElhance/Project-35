@@ -26,4 +26,27 @@ class Food {
             }
         }
     }
+    bedroom(){
+        background(bedroom,550,500);
+    }
+    garden(){
+        background(garden,550,500);
+    }
+    washroom(){
+        background(washroom,550,500);
+    }
+    currentTime=hour();
+    if(currentTime=(lastFed+1)){
+        update("Playing");
+        foodObj.garden();
+    } else if(currentTime=(lastFed+2)){
+        update("Sleeping");
+        foodObj.bedroom();
+    }else if(currentTime>(lastFed+2)&& currentTime<=(lastFed+4)){
+        update("Bathing");
+        foodObj.washroom();
+    }else{
+        update("Hungry");
+        foodObj.display();
+    }
 }
